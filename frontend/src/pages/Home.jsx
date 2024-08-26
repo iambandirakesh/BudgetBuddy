@@ -20,7 +20,7 @@ function Home({
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const navigate = useNavigate();
   useEffect(() => {
-    fetch("http://localhost:5555/api/user", {
+    fetch("https://budgetbuddy-backend-qttd.onrender.com/api/user", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

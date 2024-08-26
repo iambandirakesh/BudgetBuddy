@@ -21,7 +21,7 @@ function Register() {
     if (confirmPassword !== registerUserData.password) {
       window.alert("Passwords do not match");
     } else {
-      fetch("http://localhost:5555/api/user", {
+      fetch("https://budgetbuddy-backend-qttd.onrender.com/api/user", {
         method: "POST",
         body: JSON.stringify(registerUserData),
         headers: {

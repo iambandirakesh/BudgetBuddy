@@ -16,7 +16,7 @@ function Login({ handleNewIncome }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:5555/api/user/login", {
+    fetch("https://budgetbuddy-backend-qttd.onrender.com/api/user/login", {
       method: "POST",
       body: JSON.stringify(userData),
       headers: {

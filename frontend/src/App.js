@@ -10,7 +10,7 @@ function App() {
   const [newIncome, setnewIncome] = useState(false);
   const [expenseData, setExpenseData] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5555/api/expenses", {
+    fetch("https://budgetbuddy-backend-qttd.onrender.com/api/expenses", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -32,7 +32,7 @@ function App() {
       });
   }, [newIncome]);
   useEffect(() => {
-    fetch("http://localhost:5555/api/income", {
+    fetch("https://budgetbuddy-backend-qttd.onrender.com/api/income", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -57,7 +57,7 @@ function App() {
     setnewIncome(!newIncome);
   };
   const handleSubmit = (money, addIncome) => {
-    fetch(`http://localhost:5555/api/${money}`, {
+    fetch(`https://budgetbuddy-backend-qttd.onrender.com/api/${money}`, {
       method: "POST",
       body: JSON.stringify(addIncome),
       headers: {
@@ -79,7 +79,7 @@ function App() {
       });
   };
   const handleDelete = (page, id) => {
-    fetch(`http://localhost:5555/api/${page}/${id}`, {
+    fetch(`https://budgetbuddy-backend-qttd.onrender.com/api/${page}/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
