@@ -9,7 +9,7 @@ app.use(cors());
 import dotenv from "dotenv";
 dotenv.config();
 app.set("view engine", "ejs");
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.set("view engine", "ejs");
 //routes
