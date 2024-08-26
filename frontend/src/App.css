@@ -1,0 +1,364 @@
+styles.css :root {
+  --light-mode-primary-color: #ffff;
+  --light-mode-secondery-color: #ece7e7;
+  --light-mode-text-color: rgb(7, 7, 7);
+  --dark-mode-primary-color: rgb(7, 7, 7);
+  --dark-mode-secondery-color: rgb(57, 56, 56);
+  --dark-mode-text-color: #ffff;
+}
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.login-box {
+  background-color: rgba(150, 165, 165, 0.3);
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid #778899;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.login-box h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.login-box input {
+  margin-bottom: 15px;
+  padding: 10px;
+  width: 300px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  /* color: white; */
+  font-size: 1rem;
+}
+
+.login-box input:focus {
+  outline: none;
+  border-bottom: 2px solid #1e90ff;
+}
+
+.login-box label {
+  color: white;
+  font-size: 0.9rem;
+  position: absolute;
+  pointer-events: none;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+}
+
+.login-box input:focus + label,
+.login-box input:not(:placeholder-shown) + label {
+  color: #1e90ff;
+  transform: translateY(-30px) scale(0.75);
+}
+.remember-me {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+.submit-button {
+  height: 40px;
+  width: 100px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+}
+.home-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  gap: 1.6rem;
+  padding: 2rem;
+  background-color: rgb(255, 236, 239);
+  position: fixed;
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  width: 15vw;
+  position: relative;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  background-color: rgb(245, 242, 242);
+}
+.content {
+  height: 90vh;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(245, 242, 242);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  overflow: hidden;
+}
+.user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+  padding: 1.5em;
+}
+.user-info-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.user-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+.signout-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: absolute;
+  bottom: 2px;
+  gap: 5px;
+}
+.signout {
+  transform: translate(0, 1px);
+}
+.options-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.active {
+  border-left: 3px solid rgb(69, 63, 59);
+}
+.income-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+}
+.total-income {
+  display: flex;
+  height: 60px;
+  width: 100%;
+  background-color: rgb(253, 248, 248);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+}
+.income-options {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+.new-income-submit {
+  height: 50vh;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  background-color: rgb(253, 248, 248);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* width: 30%; */
+  padding: 10px;
+  position: relative;
+}
+.income-submit-box {
+  padding: 30px;
+  /* border-radius: 10px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+  display: flex;
+  flex-direction: column;
+}
+.income-submit-box input {
+  margin-bottom: 15px;
+  padding: 10px;
+  width: 300px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  font-size: 1rem;
+}
+.income-submit-box input:focus {
+  outline: none;
+  border-bottom: 2px solid #1e90ff;
+}
+.add-income-submit-btn {
+  border-radius: 10px;
+  height: 40px;
+  border: none;
+  background-color: rgb(238, 92, 92);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 40px;
+}
+.add-income-submit-btn:hover {
+  background-color: rgb(233, 44, 44);
+}
+.income-table {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  overflow: auto;
+  overflow-y: scroll;
+  height: 65vh;
+  max-width: 100%;
+}
+.income-data {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  background-color: rgb(253, 248, 248);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  align-items: center;
+  padding: 15px;
+  position: relative;
+}
+.income-data-info-about-money {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.income-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+.income-data-info-about-money-amount {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+.income-delete {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+}
+.transactions-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+}
+.transactions-data {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+.dashboard-info {
+  display: flex;
+  flex-direction: row;
+  gap: 10rem;
+}
+.left-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+.graph-container {
+  background-color: rgb(253, 248, 248);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  height: 16rem;
+  width: 32rem;
+}
+.total-income-expense {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.total-income-data,
+.total-expense-data,
+.total-balance {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(253, 248, 248);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  height: 5rem;
+  width: 12rem;
+}
+.total-balance-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 32rem;
+  height: 6rem;
+}
+.recent-history {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.recent-history-data {
+  background-color: rgb(253, 248, 248);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  height: 2rem;
+  width: 30rem;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+.headings-of-min-max {
+  display: flex;
+  justify-content: space-between;
+}
+.min-max-income {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(253, 248, 248);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  height: 3rem;
+  padding: 5px;
+  align-items: center;
+}
