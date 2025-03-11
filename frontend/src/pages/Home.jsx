@@ -32,6 +32,7 @@ function Home({
         if (res.status) {
           setUserData(res.userData);
         } else {
+          navigate("/login");
           throw new Error(`${res.message}`);
         }
       })

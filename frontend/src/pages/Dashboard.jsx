@@ -24,10 +24,11 @@ function Dashboard({
   const totalData = [...incomenewData, ...expensenewData];
   const totalIncomeAmountsData = incomeData.map((item) => Number(item.amount));
   const totalExpenseAmountsData = expenseData.map((item) => item.amount);
+  console.log(totalIncomeAmountsData, totalExpenseAmountsData);
   const recenthistory = totalData
     .sort((a, b) => new Date(b.date) - new Date(a.date))
     .slice(0, 4);
-
+  console.log(recenthistory, "recentHistory");
   return (
     <div className="p-4">
       <div className="md:flex md:flex-col md:gap-4 sm:flex sm:flex-col sm:gap-4 sm:overflow-scroll">
@@ -86,7 +87,7 @@ function Dashboard({
             <div className="bg-gray-50 rounded-lg shadow-lg p-4">
               <h3 className="text-xl font-semibold">Recent History</h3>
               <div className="flex flex-col gap-4">
-                {recenthistory.map((item, idx) => (
+                {recenthistory?.map((item, idx) => (
                   <div
                     className="bg-gray-50 rounded-lg shadow-lg p-2 flex items-center justify-between w-2/2 h-8"
                     key={idx}
@@ -113,28 +114,33 @@ function Dashboard({
                 ))}
               </div>
             </div>
-            <div className="bg-gray-50 rounded-lg shadow-lg p-4">
-              <div className="flex justify-between mb-2">
-                <h4 className="font-semibold">Min</h4>
-                <h3 className="font-semibold">Income</h3>
-                <h4 className="font-semibold">Max</h4>
+            {recenthistory.length > 0 && (
+              <div className="flex flex-col gap-4">
+                <div className="bg-gray-50 rounded-lg shadow-lg p-4">
+                  <div className="flex justify-between mb-2">
+                    <h4 className="font-semibold">Min</h4>
+                    <h3 className="font-semibold">Income</h3>
+                    <h4 className="font-semibold">Max</h4>
+                  </div>
+                  <div className="flex justify-between items-center bg-gray-50 rounded-lg shadow-lg p-2 h-12">
+                    <div>₹{Math.min(...totalIncomeAmountsData)}</div>
+                    <div>₹{Math.max(...totalIncomeAmountsData)}</div>
+                  </div>
+                </div>
+                <div className="bg-gray-50 rounded-lg shadow-lg p-4">
+                  <div className="flex justify-between mb-2">
+                    <h4 className="font-semibold">Min</h4>
+                    <h3 className="font-semibold">Expenses</h3>
+                    <h4 className="font-semibold">Max</h4>
+                  </div>
+                  <div className="flex justify-between items-center bg-gray-50 rounded-lg shadow-lg p-2 h-12">
+                    <div>₹{Math.min(...totalExpenseAmountsData)}</div>
+                    <div>₹{Math.max(...totalExpenseAmountsData)}</div>
+                  </div>
+                </div>
               </div>
-              <div className="flex justify-between items-center bg-gray-50 rounded-lg shadow-lg p-2 h-12">
-                <div>₹{Math.min(...totalIncomeAmountsData)}</div>
-                <div>₹{Math.max(...totalIncomeAmountsData)}</div>
-              </div>
-            </div>
-            <div className="bg-gray-50 rounded-lg shadow-lg p-4">
-              <div className="flex justify-between mb-2">
-                <h4 className="font-semibold">Min</h4>
-                <h3 className="font-semibold">Expenses</h3>
-                <h4 className="font-semibold">Max</h4>
-              </div>
-              <div className="flex justify-between items-center bg-gray-50 rounded-lg shadow-lg p-2 h-12">
-                <div>₹{Math.min(...totalExpenseAmountsData)}</div>
-                <div>₹{Math.max(...totalExpenseAmountsData)}</div>
-              </div>
-            </div>
+            )}
+            {recenthistory.length === 0 && <div> No data Found!</div>}
           </div>
         </div>
       </div>
